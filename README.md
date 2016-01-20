@@ -11,6 +11,13 @@ Requirements
 - Erlang R17+
 - rebar3
 
+
+Include in Your Project
+-----------------------
+
+Add `{deps, [bert]}.` to `rebar.config`
+
+
 Build
 -----
 
