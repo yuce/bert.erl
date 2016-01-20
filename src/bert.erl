@@ -6,7 +6,6 @@
 -export([encode/1,
          decode/1]).
 
--define(DICT_FIELD_SIZE, 9).
 
 %%====================================================================
 %% API functions
