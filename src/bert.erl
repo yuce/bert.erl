@@ -46,6 +46,9 @@ decode_term({bert, nil}) -> [];
 decode_term({bert, true}) -> true;
 decode_term({bert, false}) -> false;
 
+decode_term({bert, dict, {bert, nil}}) ->
+    #{};
+
 decode_term({bert, dict, KeysValues}) when is_list(KeysValues) ->
     maps:from_list(decode_term(KeysValues));
 
@@ -87,6 +90,7 @@ encode_dict_test() ->
     ExpectedSortedKV = [{"a",{bert,true}}, {<<"bbb">>,42}],
     ?assertEqual(ExpectedSortedKV, lists:sort(EncodeDict)).
 
+
 encode_number_test() ->
     ?assertEqual(42, encode_term(42)).
 
@@ -115,6 +119,9 @@ decode_dict_test() ->
     Dict = {bert,dict,[{<<"bbb">>,42},{"a",{bert,true}}]},
     Expected = maps:from_list([{"a", true}, {<<"bbb">>, 42}]),
     ?assertEqual(Expected, decode_term(Dict)).
+
+decode_empty_dict_test() ->
+    ?assertEqual(#{}, decode_term(encode_term(#{}))).
 
 decode_number_test() ->
     ?assertEqual(42, decode_term(42)).
