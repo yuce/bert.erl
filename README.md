@@ -3,7 +3,7 @@ bert
 
 An updated Erlang BERT encode/decoder, based on Tom Preston-Werner's *bert.erl*. This library uses maps instead of dicts, so requires Erlang/OTP R17 and higher.
 
-See [BERT RPC specification](http://bert-rpc.org/) for the specs.
+See [BERT RPC specification](https://web.archive.org/web/20200413110437/http://bert-rpc.org/) for the specs.
 
 Requirements
 ------------
@@ -47,3 +47,9 @@ Decode a binary:
             97,42,106,106>>,
     bert:decode(Bin).
     > #{key => [{some, "tuple"}, {true, 42}]}
+
+Generate documentation:
+
+```
+	$ mkdir doc && cp -fR doc_src/* doc && rebar3 edoc
+```

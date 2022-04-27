@@ -11,9 +11,19 @@
 %% API functions
 %%====================================================================
 
+%%@doc Encode Erlang term to a binary data.
+
+-spec encode(Term) -> Result when
+	Term :: term(),
+	Result :: binary().
 encode(Term) ->
     term_to_binary(encode_term(Term)).
 
+%%@doc Decode a binary data to Erlang term.
+
+-spec decode(Bin) -> Result when
+	Bin :: binary(),
+	Result :: term().
 decode(Bin) ->
     decode_term(binary_to_term(Bin)).
 
@@ -35,7 +45,7 @@ encode_term(List) when is_list(List) ->
     % TODO: Handle improper lists
     lists:map(fun encode_term/1, List);
 
-encode_term(Tuple) when is_tuple(Tuple) ->
+encode_term(Tuple) when is_tuple(Tuple), Tuple =/={} ->
     list_to_tuple(encode_term(tuple_to_list(Tuple)));
 
 encode_term(Term) -> Term.

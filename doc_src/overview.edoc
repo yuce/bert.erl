@@ -1,0 +1,8 @@
+@author Yuce Tekol
+@title bert
+@doc An updated Erlang BERT encode/decoder, based on Tom Preston-Werner's bert.erl. This library uses maps instead of dicts, so requires Erlang/OTP R17 and higher.
+
+BERT (Binary ERlang Term) is a flexible binary data interchange format based on (and compatible with) Erlang's binary serialization format (as used by erlang:term_to_binary/1). 
+
+
+
