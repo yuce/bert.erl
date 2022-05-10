@@ -48,8 +48,22 @@ Decode a binary:
     bert:decode(Bin).
     > #{key => [{some, "tuple"}, {true, 42}]}
 
-Generate documentation:
+## Documentation generation
+
+### Edoc
+
+#### Generate public API
+```
+rebar3 edoc
+```
+
+#### Generate private API
+```
+rebar3 as edoc_private edoc
+```
+
+### ExDoc
 
 ```
-	$ mkdir doc && cp -fR doc_src/* doc && rebar3 edoc
+rebar3 ex_doc --output edoc
 ```
