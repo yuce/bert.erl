@@ -88,6 +88,11 @@ encode_tuple_test() ->
     Tuple = {"a", true},
     Expected = {"a", {bert, true}},
     ?assertEqual(Expected, encode_term(Tuple)).
+	
+encode_empty_tuple_test() ->
+    Tuple = {},
+    Expected = {},
+    ?assertEqual(Expected, encode_term(Tuple)).	
 
 encode_list_test() ->
     List = [{"a", true}, {<<"bbb">>, 42}],

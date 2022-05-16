@@ -5,31 +5,38 @@ An updated Erlang BERT encode/decoder, based on Tom Preston-Werner's *bert.erl*.
 
 See [BERT RPC specification](https://web.archive.org/web/20200413110437/http://bert-rpc.org/) for the specs.
 
-## Requirements
-
+### Requirements
 
 - Erlang R17+
 - rebar3
 
 
-### Include in Your Project
+## Include in Your Project
 
 Add `{deps, [bert]}.` to `rebar.config`
 
 
-### Build
+## Build
 
 ```
     $ rebar3 compile
 ```
 
-### Test
+## Test
+
+### Run EUnit tests
 
 ```
     $ rebar3 eunit
 ```
 
-### Usage
+### Run Property-based tests
+
+```
+    $ rebar3 as test proper
+```
+
+## Usage
 
 
 Encode a term:
@@ -40,6 +47,7 @@ Encode a term:
     > <<131,104,3,100,0,4,98,101,114,116,100,0,4,100,105,99,116,
       108,0,0,0,1,104,2,100,0,3,107,101,...>>
 ```
+
 Decode a binary:
 
 ```
@@ -56,17 +64,19 @@ Decode a binary:
 ### Edoc
 
 #### Generate public API
+
 ```
-rebar3 edoc
+    $ rebar3 edoc
 ```
 
 #### Generate private API
+
 ```
-rebar3 as edoc_private edoc
+    $ rebar3 as edoc_private edoc
 ```
 
 ### ExDoc
 
 ```
-rebar3 ex_doc --output edoc
+    $ rebar3 ex_doc --output edoc
 ```
