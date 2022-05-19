@@ -9,7 +9,6 @@
   {env,[]},
   {modules, []},
 
-  {maintainers, ["Yuce Tekol"]},
   {licenses, ["MIT"]},
   {links, [{"Github", "https://github.com/yuce/bert.erl"}]}
  ]}.

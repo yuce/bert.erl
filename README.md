@@ -4,7 +4,7 @@ An updated Erlang BERT encode/decoder, based on Tom Preston-Werner's *bert.erl*.
 
 See [BERT RPC specification](https://web.archive.org/web/20200413110437/http://bert-rpc.org/) for the specs.
 
-Thanks to [contributors](CONTRIBUTORS.txt).
+Thanks to [contributors](CONTRIBUTORS).
 
 ### Requirements
 
