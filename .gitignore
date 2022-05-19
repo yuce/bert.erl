@@ -21,3 +21,5 @@ edoc
 doc/*
 !doc/overview.edoc
 !doc/style.css
+rebar3.crashdump
+
