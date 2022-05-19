@@ -2,7 +2,7 @@ on: push
 
 jobs:
   test:
-    runs-on: ubuntu18
+    runs-on: ubuntu-18.04
     name: Erlang/OTP ${{matrix.otp}} / rebar3 ${{matrix.rebar3}}
     strategy:
       matrix:
